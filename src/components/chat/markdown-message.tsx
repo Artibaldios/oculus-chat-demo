@@ -303,7 +303,7 @@ export function MarkdownMessage({
   return (
     <div
       className={cn(
-        "space-y-3 break-words [&_a]:text-inherit [&_code]:break-words [&_li]:leading-6 [&_p]:leading-6",
+        "space-y-3 wrap-break-word [&_a]:text-inherit [&_code]:wrap-break-word [&_li]:leading-6 [&_p]:leading-6",
         className,
       )}
     >

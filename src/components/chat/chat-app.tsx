@@ -204,7 +204,7 @@ export function ChatApp() {
         role: message.role,
         content: message.content,
       }));
-      const assistantMessage = createAssistantStatusMessage("anonymous", "Thinking...");
+      const assistantMessage = createAssistantStatusMessage("anonymous", "");
 
       setPendingMessages([userMessage, assistantMessage]);
 
@@ -337,7 +337,7 @@ export function ChatApp() {
   );
 
   const header = (
-    <header className="sticky top-0 z-20 border-b border-black/6 bg-white/95 px-4 py-2 backdrop-blur supports-[backdrop-filter]:bg-white/80 md:px-8">
+    <header className="sticky top-0 z-20 border-b border-black/6 bg-white/95 px-4 py-2 backdrop-blur supports-backdrop-filter:bg-white/80 md:px-8">
       <div className="flex gap-3 flex-row items-center justify-between">
         <div className="flex items-start gap-3">
           <Button
@@ -385,7 +385,7 @@ export function ChatApp() {
       <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
         <SheetContent
           side="left"
-          className="w-[260px] max-w-[260px] min-w-[260px] border-r border-sidebar-border bg-sidebar p-0 text-sidebar-foreground"
+          className="w-65 max-w-65 min-w-65 border-r border-sidebar-border bg-sidebar p-0 text-sidebar-foreground"
           showCloseButton={false}
         >
           {mobileSidebar}
