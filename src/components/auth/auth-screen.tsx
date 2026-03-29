@@ -121,8 +121,9 @@ export function AuthScreen() {
       await queryClient.invalidateQueries({ queryKey: ["me"] });
 
       if (result.needsEmailConfirmation) {
+        //Default behavior with email confiramtion skipped, just to save my time
         setNotice(
-          "Registration succeeded. Check your email to confirm the account, then sign in.",
+          "Registration succeeded. Now you can log in",
         );
         return;
       }

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useEffectEvent } from "react";
 import { BotIcon, UserIcon } from "lucide-react";
+import { MarkdownMessage } from "@/components/chat/markdown-message";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { LoadingIndicator } from "@/components/chat/loading-indicator";
 import type { Message } from "@/types/chat";
@@ -70,7 +71,11 @@ export function MessageList({
                 }`}
               >
                 {message.content ? (
-                  <p className="whitespace-pre-wrap">{message.content}</p>
+                  message.role === "assistant" ? (
+                    <MarkdownMessage content={message.content} />
+                  ) : (
+                    <p className="whitespace-pre-wrap">{message.content}</p>
+                  )
                 ) : message.role === "assistant" && isStreaming ? (
                   <LoadingIndicator label="AI is thinking" />
                 ) : null}
